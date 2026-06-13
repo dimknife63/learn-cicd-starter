@@ -93,7 +93,7 @@ func main() {
 		ReadHeaderTimeout: 5 * time.Second,
 	}
 
-	// FIX: Use log.Print instead of log.Printf with a format string 
+	// FIX: Use log.Print instead of log.Printf with a format string
 	// to avoid log injection warnings from gosec.
 	// #nosec G706
 	log.Print("Serving on port: ", port)
