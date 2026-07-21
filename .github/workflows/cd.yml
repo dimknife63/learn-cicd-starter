@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  Deploy:
+  deploy:
     name: Deploy
     runs-on: ubuntu-latest
 
@@ -20,3 +20,14 @@ jobs:
 
       - name: Build production binary
         run: ./scripts/buildprod.sh
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Build and push Docker image
+        run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-503117/notely-ar-repo/notely:latest .
