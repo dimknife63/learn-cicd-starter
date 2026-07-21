@@ -10,7 +10,7 @@ Applying with within a `r.Group()` or using `With()` will not work without route
 ## Usage
 
 ```go
-func main() {
+func main(){
   r := chi.NewRouter()
 
   // Basic CORS
