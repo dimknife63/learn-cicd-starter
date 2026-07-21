@@ -53,7 +53,7 @@ import (
 	"github.com/go-chi/chi/middleware"
 )
 
-func main() {
+func main(){
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
@@ -80,7 +80,7 @@ import (
   "github.com/go-chi/chi/middleware"
 )
 
-func main() {
+func main(){
   r := chi.NewRouter()
 
   // A good base middleware stack
